@@ -7,8 +7,8 @@ const nextConfig = {
     ignoreDuringBuilds: true,
   },
   experimental: {
-    // Esto obliga a Next.js a tratar la librería problemática como externa del servidor
-    serverExternalPackages: ['rebrowser-playwright-core', 'playwright-core'],
+    // Corregido para Next.js 14.1.4
+    serverComponentsExternalPackages: ['rebrowser-playwright-core', 'playwright-core'],
   },
   output: 'standalone',
 };
