@@ -1,14 +1,15 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   typescript: {
-    // Ignora los errores de TypeScript al compilar
     ignoreBuildErrors: true,
   },
   eslint: {
-    // Ignora ESLint al compilar
     ignoreDuringBuilds: true,
   },
-  // Evita que Next.js intente pre-renderizar las rutas de API como páginas estáticas
+  experimental: {
+    // Esto obliga a Next.js a tratar la librería problemática como externa del servidor
+    serverExternalPackages: ['rebrowser-playwright-core', 'playwright-core'],
+  },
   output: 'standalone',
 };
 
